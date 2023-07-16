@@ -8,4 +8,24 @@ function formatDate(timestamp){
     if (minutes < 10){
         minutes = `0${minutes}`;
     }
+
+    let days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+    ];
+    let day = days.[date.getDay];
+    return `${day} ${hours}:${minutes}`;
+}
+
+funcion formatDay(timestamp){
+    let date = new Date(timestamp*1000);
+let day = date.getDay();
+let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+
+return[day];
 }
