@@ -53,3 +53,18 @@ temperatureElement.innerHTML = Math.round(celsiusTemperature);
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+
+function search(city) {
+  let apiKey = "851a282a848c231c872bc2aa9d430a5c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
